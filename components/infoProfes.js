@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     },
     nomProfessor: {
         flex: 1,
-        padding: 230,
+        padding: 20,
         justifyContent: 'space-around',
         borderColor: 'blue',
         borderWidth: 3

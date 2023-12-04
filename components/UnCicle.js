@@ -1,6 +1,6 @@
-import React from 'react';
-import {StyleSheet, Text, View, Dimensions} from 'react-native';
-import {Surface} from 'react-native-paper';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { Surface, Avatar } from 'react-native-paper';
 /**
  * Component implementa un element d'una llista. Mostra el cicle i el nom complet del cicle
  * @param {*} elCicle Objecte que conté un element de la llista
@@ -18,22 +18,28 @@ const UnCicle = props => {
     <Surface
       style={
         props.cicleSeleccionat !== null &&
-        props.index === props.cicleSeleccionat
+          props.index === props.cicleSeleccionat
           ? styles.estilCardSeleccionat
           : styles.estilCard
       }
-      elevation={4}>
+      elevation={4}
+    >
       <View>
         <Text
           style={styles.sectionTitle}
-          onPress={() => props.guardaPosicio(props.index)}>
+          onPress={() => props.guardaPosicio(props.index)}
+        >
           {props.elCicle.cicle}
         </Text>
         <Text
           style={styles.sectionDescription}
-          onPress={() => props.guardaPosicio(props.index)}>
+          onPress={() => props.guardaPosicio(props.index)}
+        >
           {props.elCicle.nomCicle}
         </Text>
+        {props.cicleSeleccionat !== null &&
+          props.index === props.cicleSeleccionat ?
+          (<Avatar.Icon size={24} icon={"check"} backgroundColor="green" color='lightgreen' />) : ""}
       </View>
     </Surface>
   );
@@ -67,6 +73,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     fontSize: 16,
     fontWeight: '400',
-  },
+  }
 });
 export default UnCicle;

@@ -21,7 +21,7 @@ const App = () => {
     setCicleSeleccionat(posicioElement);
   };
   return (
-    <View style={{ flex: 2, borderColor: 'pink', borderWidth: 3 }}>
+    <View style={{ flex: 1, borderColor: 'pink', borderWidth: 3 }}>
       <View
         style={{
           flex: 1,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import { Avatar } from 'react-native-paper';
-import InfoProfes from './InfoProfes';
+import InfoProfes from './InfoProfes'
 
 const LlistatProfesCicle = props => {
   return (
@@ -12,7 +12,7 @@ const LlistatProfesCicle = props => {
             return (
               <InfoProfes
                 dades={unModul}
-                key={index}
+                index={index}
               />
             );
           },

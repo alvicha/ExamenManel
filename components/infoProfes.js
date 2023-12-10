@@ -1,42 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Avatar, Button, Card, Provider as PaperProvider } from 'react-native-paper';
+import { Avatar, Button, Chip, Card, Provider as PaperProvider } from 'react-native-paper';
 
 const InfoProfes = (props) => {
-  const [visible, setVisible] = React.useState(false);
-  const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
+  const [mostrarChipProfessor, setMostrarChipProfessor] = useState(false);
+  const donarChipActivat = () => setMostrarChipProfessor(!mostrarChipProfessor);
+
+  const fotoProfessor = () => {
+    return (<Avatar.Icon size={36} icon={props.dades.foto} />)
+  }
 
   return (
-    <ScrollView style={styles.container}>
-      <Card>
-        <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
-        <Card.Content>
-          <Text variant="titleLarge">Card title</Text>
-          <Text variant="bodyMedium">Card content</Text>
-        </Card.Content>
-        <Card.Actions>
-          <Button>Cancel</Button>
-          <Button>Ok</Button>
-        </Card.Actions>
-      </Card>
+    <ScrollView contentContainerStyle={styles.contentLlistatProfes}>
+      <View style={styles.chip}>
+        <Chip icon="information" onPress={donarChipActivat}>
+          {props.dades.nom}
+        </Chip>
+        {mostrarChipProfessor && (
+          <Card style={styles.card}>
+            <Card.Title style={styles.title} title={props.dades.nom} right={fotoProfessor} />
+            <Card.Content>
+              <Text style={styles.modul} variant="titleLarge">Modul: {props.dades.modul}</Text>
+              <Text variant="bodyMedium">Nom complet modul: {props.dades.nomCompletModul}</Text>
+              <Text variant="bodyMedium">Hores setmanals: {props.dades.horesSetmanals}</Text>
+            </Card.Content>
+            <Card.Actions>
+              <Button>Cancel</Button>
+              <Button>Ok</Button>
+            </Card.Actions>
+          </Card>
+        )}
+      </View>
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 10
+  contentLlistatProfes: {
+    justifyContent: 'space-around', 
+    borderColor: 'blue', 
+    borderWidth: 3
+  },
+  chip: {
+    padding: 10,
+    marginVertical: 5
+  },
+  card: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center'
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'red',
   },
   nomProfessor: {
     padding: 20,
     margin: 50,
     borderRadius: 10,
-  },
-  nombre: {
-    fontSize: 90,
-    fontWeight: '400',
-    marginLeft: 10,
   },
   text: {
     fontSize: 16,

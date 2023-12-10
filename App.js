@@ -6,9 +6,9 @@
  * @flow strict-local
  */
 
-import React, {useState} from 'react';
-import {StyleSheet, Text, ScrollView, View, Dimensions} from 'react-native';
-import {Avatar, Divider} from 'react-native-paper';
+import React, { useState } from 'react';
+import { StyleSheet, Text, ScrollView, View, Dimensions } from 'react-native';
+import { Avatar, Divider } from 'react-native-paper';
 import UnCicle from './components/UnCicle';
 import LlistatProfesCicle from './components/LlistatProfesCicle';
 
@@ -21,7 +21,7 @@ const App = () => {
     setCicleSeleccionat(posicioElement);
   };
   return (
-    <View style={{flex: 0.8 }}>
+    <View style={{ flex: 2, borderColor: 'pink', borderWidth: 3 }}>
       <View
         style={{
           flex: 1,
@@ -29,7 +29,7 @@ const App = () => {
           alignItems: 'center',
         }}>
         <Text style={styles.sectionTitle}>Unitat TICS</Text>
-        <View style={{flex: 1}}>
+        <View style={{ flex: 1 }}>
           <ScrollView horizontal={true}>
             {info.unitatTics.map((unCicleTic, index) => {
               return (
@@ -46,7 +46,7 @@ const App = () => {
         </View>
         {console.log(info.unitatTics + '\n' + cicleSeleccionat)}
       </View>
-      <Divider style={{padding: 3}} horizontalInset={true} bold={true} />
+      <Divider style={{ padding: 3 }} horizontalInset={true} bold={true} />
 
       <LlistatProfesCicle cicleSeleccionat={cicleSeleccionat} dades={info} />
     </View>

@@ -1,16 +1,17 @@
 import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import { Avatar } from 'react-native-paper';
-import InfoProfes from './InfoProfes'
+import InfoProfes from './infoProfes'
 
 const LlistatProfesCicle = props => {
   return (
-    <View style={{ flex: 2.5, padding: 3, borderColor: 'red', borderWidth: 3 }}>
+    <View style={{ flex: 2.5, padding: 3, borderColor: 'white' }}>
       {props.cicleSeleccionat !== null ? (
         props.dades.unitatTics[props.cicleSeleccionat].curs[0].profes.map(
           (unModul, index) => {
             return (
               <InfoProfes
+                key={index}
                 dades={unModul}
                 index={index}
               />

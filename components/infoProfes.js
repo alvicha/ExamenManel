@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Avatar, Button, Chip, Card, Provider as PaperProvider } from 'react-native-paper';
+import { Avatar, Chip, Card, Provider as PaperProvider } from 'react-native-paper';
 
 const InfoProfes = (props) => {
   const arrayColores = ['#FDE5E5', '#D1F2D1', '#D1F2F0', '#FAF9BA', '#E7D1F2'];
@@ -31,9 +31,15 @@ const InfoProfes = (props) => {
             <Card.Title titleStyle={styles.title}
               title={props.dades.nom} right={fotoProfessor} />
             <Card.Content>
-              <Text style={styles.modul} variant="titleLarge">Modul: {props.dades.modul}</Text>
-              <Text style={styles.completModul} variant="bodyMedium">Nom complet modul: {props.dades.nomCompletModul}</Text>
-              <Text style={styles.horesSetmanals} variant="bodyMedium">Hores setmanals: {props.dades.horesSetmanals}</Text>
+              <Text style={styles.modul} variant="bodyMedium">Modul:
+                <Text style={styles.textModul}>{props.dades.modul}</Text>
+              </Text>
+              <Text style={styles.enunciatCompletModul} variant="bodyMedium">Nom complet modul:
+                <Text style={styles.completModul}>{props.dades.nomCompletModul}</Text>
+              </Text>
+              <Text style={styles.enunciatHoresSetmanals} variant="bodyMedium">Hores setmanals:
+                <Text style={styles.horesSetmanals}>{props.dades.horesSetmanals}</Text>
+              </Text>
             </Card.Content>
           </Card>
         )
@@ -52,17 +58,45 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 5
   },
-  completModul: {
+  enunciatCompletModul: {
     fontSize: 18,
     fontWeight: '400',
     padding: 2,
     textAlign: 'left'
   },
-  horesSetmanals: {
+  completModul: {
+    fontSize: 20,
+    fontWeight: '900',
+    textAlign: 'left',
+    color: 'darkorange'
+  },
+  infoModul: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  infoCompletModul: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  infoHoresSetmanals: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  enunciatHoresSetmanals: {
     fontSize: 18,
     fontWeight: '400',
     padding: 3,
     textAlign: 'left'
+  },
+  horesSetmanals: {
+    fontSize: 20,
+    fontWeight: '900',
+    textAlign: 'left',
+    color: 'darkorange'
   },
   title: {
     fontSize: 22,
@@ -71,9 +105,14 @@ const styles = StyleSheet.create({
   },
   modul: {
     fontSize: 18,
-    fontWeight: '400',
     padding: 3,
     textAlign: 'left'
+  },
+  textModul: {
+    fontSize: 20,
+    fontWeight: '900',
+    textAlign: 'left',
+    color: 'darkorange'
   },
   card: {
     flexDirection: 'row',

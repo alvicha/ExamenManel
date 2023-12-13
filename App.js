@@ -8,18 +8,21 @@
 
 import React, { useState } from 'react';
 import { StyleSheet, Text, ScrollView, View, Dimensions } from 'react-native';
-import { Avatar, Divider } from 'react-native-paper';
+import { Avatar, Switch, Divider } from 'react-native-paper';
 import UnCicle from './components/UnCicle';
 import LlistatProfesCicle from './components/LlistatProfesCicle';
 
 const App = () => {
   const [info, setInfo] = useState(require('./utils/dades.json'));
   const [cicleSeleccionat, setCicleSeleccionat] = useState(null);
+  const [isSwitchOn, setIsSwitchOn] = useState(false);
+  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
 
   const unCicleSeleccionat = posicioElement => {
     console.log('He rebut ' + posicioElement);
     setCicleSeleccionat(posicioElement);
   };
+
   return (
     <View style={{ flex: 1, borderColor: 'pink', borderWidth: 3 }}>
       <View
@@ -47,8 +50,12 @@ const App = () => {
         {console.log(info.unitatTics + '\n' + cicleSeleccionat)}
       </View>
       <Divider style={{ padding: 3 }} horizontalInset={true} bold={true} />
-
       <LlistatProfesCicle cicleSeleccionat={cicleSeleccionat} dades={info} />
+      <Switch
+          color="red"
+          onValueChange={onToggleSwitch}
+          value={isSwitchOn}
+        />
     </View>
   );
 };

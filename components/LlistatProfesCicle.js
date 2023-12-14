@@ -7,11 +7,9 @@ const LlistatProfesCicle = props => {
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const isCicleDAM = props.cicleSeleccionat !== null &&
     props.dades.unitatTics[props.cicleSeleccionat].cicle === 'DAM';
-  let selectedCursIndex = isCicleDAM ? isSwitchOn ? 1 : 0 : 0;
 
-  const onToggleSwitch = () => {
-    setIsSwitchOn(!isSwitchOn);
-  };
+  let selectedCursIndex = isCicleDAM ? isSwitchOn ? 1 : 0 : 0;
+  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
 
   return (
     <View style={{ flex: 2.5, padding: 3, borderColor: 'red' }}>

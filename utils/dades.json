@@ -157,53 +157,6 @@
                             "horesSetmanals": 3
                         }
                     ]
-                },
-                {
-                    "numCurs": "2n",
-                    "profes": [
-                        {
-                            "nom": "Roberto",
-                            "foto": "bluetooth",
-                            "modul": "AD",
-                            "nomCompletModul": "Accés a dades",
-                            "horesSetmanals": 6
-                        },
-                        {
-                            "nom": "Uwe",
-                            "foto": "camera",
-                            "modul": "EMP",
-                            "nomCompletModul": "Empresa e Iniciativa Emprendedora",
-                            "horesSetmanals": 3
-                        },
-                        {
-                            "nom": "Belen",
-                            "foto": "camera",
-                            "modul": "SGE",
-                            "nomCompletModul": "Sistemas de Gestión Empresarial",
-                            "horesSetmanals": 5
-                        },
-                        {
-                            "nom": "Manel",
-                            "foto": "heart",
-                            "modul": "DI",
-                            "nomCompletModul": "Desenvolupament d'Interfícies",
-                            "horesSetmanals": 6
-                        },
-                        {
-                            "nom": "Caterina",
-                            "foto": "shuffle",
-                            "modul": "ING",
-                            "nomCompletModul": "Inglés",
-                            "horesSetmanals": 2
-                        },
-                        {
-                            "nom": "Paco",
-                            "foto": "alarm",
-                            "modul": "PROG.M",
-                            "nomCompletModul": "Programación multimedia y dispositivos móviles",
-                            "horesSetmanals": 5
-                        }
-                    ]
                 }
             ]
         },
@@ -255,53 +208,6 @@
                             "modul": "FOL",
                             "nomCompletModul": "Formació i orientació laboral",
                             "horesSetmanals": 3
-                        }
-                    ]
-                },
-                {
-                    "numCurs": "2n",
-                    "profes": [
-                        {
-                            "nom": "Roberto",
-                            "foto": "bluetooth",
-                            "modul": "AD",
-                            "nomCompletModul": "Accés a dades",
-                            "horesSetmanals": 6
-                        },
-                        {
-                            "nom": "Uwe",
-                            "foto": "camera",
-                            "modul": "EMP",
-                            "nomCompletModul": "Empresa e Iniciativa Emprendedora",
-                            "horesSetmanals": 3
-                        },
-                        {
-                            "nom": "Belen",
-                            "foto": "camera",
-                            "modul": "SGE",
-                            "nomCompletModul": "Sistemas de Gestión Empresarial",
-                            "horesSetmanals": 5
-                        },
-                        {
-                            "nom": "Manel",
-                            "foto": "heart",
-                            "modul": "DI",
-                            "nomCompletModul": "Desenvolupament d'Interfícies",
-                            "horesSetmanals": 6
-                        },
-                        {
-                            "nom": "Caterina",
-                            "foto": "shuffle",
-                            "modul": "ING",
-                            "nomCompletModul": "Inglés",
-                            "horesSetmanals": 2
-                        },
-                        {
-                            "nom": "Paco",
-                            "foto": "alarm",
-                            "modul": "PROG.M",
-                            "nomCompletModul": "Programación multimedia y dispositivos móviles",
-                            "horesSetmanals": 5
                         }
                     ]
                 }

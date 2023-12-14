@@ -15,8 +15,6 @@ import LlistatProfesCicle from './components/LlistatProfesCicle';
 const App = () => {
   const [info, setInfo] = useState(require('./utils/dades.json'));
   const [cicleSeleccionat, setCicleSeleccionat] = useState(null);
-  const [isSwitchOn, setIsSwitchOn] = useState(false);
-  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
 
   const unCicleSeleccionat = posicioElement => {
     console.log('He rebut ' + posicioElement);
@@ -51,11 +49,6 @@ const App = () => {
       </View>
       <Divider style={{ padding: 3 }} horizontalInset={true} bold={true} />
       <LlistatProfesCicle cicleSeleccionat={cicleSeleccionat} dades={info} />
-      <Switch
-          color="red"
-          onValueChange={onToggleSwitch}
-          value={isSwitchOn}
-        />
     </View>
   );
 };

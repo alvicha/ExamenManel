@@ -6,6 +6,9 @@ import InfoProfes from './infoProfes'
 const LlistatProfesCicle = props => {
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const [index, setIndex] = useState(0);
+  const isCicleDAM = props.cicleSeleccionat !== null &&
+    props.dades.unitatTics[props.cicleSeleccionat].cicle === 'DAM';
+
   const onToggleSwitch = () => {
     setIsSwitchOn(!isSwitchOn)
     if (!isSwitchOn) {
@@ -17,7 +20,7 @@ const LlistatProfesCicle = props => {
 
   return (
     <View style={{ flex: 2.5, padding: 3, borderColor: 'red' }}>
-      {props.cicleSeleccionat !== null ? (
+      {isCicleDAM && props.cicleSeleccionat !== null ? (
         props.dades.unitatTics[props.cicleSeleccionat].curs[index].profes.map(
           (unModul, index) => {
             return (
@@ -34,8 +37,7 @@ const LlistatProfesCicle = props => {
           Selecciona un cicle. Sempre es visualitzaran els profes de 1r curs
         </Text>
       )}
-      {props.cicleSeleccionat !== null &&
-        props.dades.unitatTics[props.cicleSeleccionat].cicle === 'DAM' && (
+      {isCicleDAM && (
           <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
             <Text style={{ fontSize: 15, fontWeight: '900', marginRight: 5 }}>1r</Text>
             <Switch

@@ -5,20 +5,18 @@ import InfoProfes from './infoProfes'
 
 const LlistatProfesCicle = props => {
   const [isSwitchOn, setIsSwitchOn] = useState(false);
-  const [index, setIndex] = useState(0);
   const isCicleDAM = props.cicleSeleccionat !== null &&
     props.dades.unitatTics[props.cicleSeleccionat].cicle === 'DAM';
+  let selectedCursIndex = isCicleDAM ? isSwitchOn ? 1 : 0 : 0;
 
   const onToggleSwitch = () => {
-    setIsSwitchOn(!isSwitchOn)
-    let selectedCursIndex = isCicleDAM ? isSwitchOn ? 1 : 0 : 0;
-    setIndex(selectedCursIndex);
+    setIsSwitchOn(!isSwitchOn);
   };
 
   return (
     <View style={{ flex: 2.5, padding: 3, borderColor: 'red' }}>
       {props.cicleSeleccionat !== null ? (
-        props.dades.unitatTics[props.cicleSeleccionat].curs[index].profes.map(
+        props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes.map(
           (unModul, index) => {
             return (
               <InfoProfes

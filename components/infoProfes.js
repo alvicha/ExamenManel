@@ -19,28 +19,10 @@ const InfoProfes = (props) => {
     return (<Avatar.Icon size={40} icon={props.dades.foto} />)
   }
 
-  const eliminarProfessorLlista = (index) => {
-    
-    const cicleIndex = props.dades.unitatTics.findIndex(c => c.cicle === cicleToRemove);
-    
-    if (cicleIndex !== -1) {
-      // Encuentra el índice del curs dentro del cicle
-      const cursIndex = props.dades.unitatTics[cicleIndex].curs.findIndex(c => c.numCurs === numCursToRemove);
-    
-      if (cursIndex !== -1) {
-        // Encuentra el índice del profesor dentro del curs
-        const profesIndex = miJson.unitatTics[cicleIndex].curs[cursIndex].profes.findIndex(p => p.nom === nomProfToRemove);
-    
-        if (profesIndex !== -1) {
-          // Elimina el profesor
-          miJson.unitatTics[cicleIndex].curs[cursIndex].profes.splice(profesIndex, 1);
-        }
-      } 
-    }
-
+  const eliminarProfessorLlista = () => {
+    props.eliminaProfessorLlista(props.index);
     setVisible(false);
-
-  }
+  };
 
   return (
     <ScrollView contentContainerStyle={styles.contentLlistatProfes}>
@@ -90,7 +72,7 @@ const InfoProfes = (props) => {
             </Dialog.Content>
             <Dialog.Actions>
               <Button onPress={hideDialog}>No</Button>
-              <Button onPress={() => eliminarProfessorLlista(props.index)}>Si</Button>
+              <Button onPress={eliminarProfessorLlista}>Si</Button>
             </Dialog.Actions>
           </Dialog>
         </Portal>

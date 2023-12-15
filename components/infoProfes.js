@@ -22,7 +22,7 @@ const InfoProfes = (props) => {
   const eliminarProfessorLlista = () => {
     props.eliminaProfessorLlista(props.index);
     setVisible(false);
-  };
+  }
 
   return (
     <ScrollView contentContainerStyle={styles.contentLlistatProfes}>
@@ -57,7 +57,6 @@ const InfoProfes = (props) => {
                   icon="delete"
                   mode="text"
                   onPress={showDialog}
-                  style={{ borderRadius: 0 }}
                 />
               </View>
             </Card>

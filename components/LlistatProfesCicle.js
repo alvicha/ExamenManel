@@ -12,8 +12,8 @@ const LlistatProfesCicle = props => {
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
 
   const eliminarProfessorLlista = (index) => {
-    props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes.splice(index, 1);
-  };
+    props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes.splice(index, 1)
+  }
 
   return (
     <View style={{ flex: 2.5, padding: 3, borderColor: 'red' }}>

@@ -51,7 +51,7 @@ const InfoProfes = (props) => {
                   <Text style={styles.horesSetmanals}>{props.dades.horesSetmanals}</Text>
                 </Text>
               </Card.Content>
-              <View style={{ justifyContent: 'flex-end', alignItems: 'flex-end' }}>
+              <View style={styles.botoPapelera}>
                 <Button
                   textColor='green'
                   icon="delete"
@@ -149,6 +149,10 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     textAlign: 'left',
     color: 'darkorange'
+  },
+  botoPapelera: {
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end'
   }
 });
 

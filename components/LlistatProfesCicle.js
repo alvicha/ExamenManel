@@ -12,7 +12,17 @@ const LlistatProfesCicle = props => {
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
 
   const eliminarProfessorLlista = (index) => {
-    props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes.splice(index, 1)
+    props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes.splice(index, 1);
+    
+    const professor = props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes[index];
+    let nomProfessor = professor.nom;
+    const indexProfesor = props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes.findIndex(
+      (prof) => prof.nom === nomProfessor
+    );
+    if (indexProfesor !== -1) {
+      props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes.splice(indexProfesor, 1);
+    }
+    props.eliminarDades({ ...props.dades });
   }
 
   return (

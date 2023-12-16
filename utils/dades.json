@@ -69,7 +69,7 @@
                             "horesSetmanals": 3
                         },
                         {
-                            "nom": "Belen",
+                            "nom": "Belén",
                             "foto": "camera",
                             "modul": "SGE",
                             "nomCompletModul": "Sistemas de Gestión Empresarial",
@@ -86,14 +86,14 @@
                             "nom": "Caterina",
                             "foto": "shuffle",
                             "modul": "ING",
-                            "nomCompletModul": "Inglés",
+                            "nomCompletModul": "Anglés tècnic",
                             "horesSetmanals": 2
                         },
                         {
                             "nom": "Paco",
                             "foto": "alarm",
                             "modul": "PROG.M",
-                            "nomCompletModul": "Programación multimedia y dispositivos móviles",
+                            "nomCompletModul": "Programació multimèdia i dispositius mòbils",
                             "horesSetmanals": 5
                         },
                         {

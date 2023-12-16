@@ -21,6 +21,10 @@ const App = () => {
     setCicleSeleccionat(posicioElement);
   };
 
+  const eliminacioDades = professor => {
+    setInfo(professor);
+  };
+
   return (
     <View style={{ flex: 1, borderColor: 'pink', borderWidth: 3 }}>
       <View
@@ -48,7 +52,7 @@ const App = () => {
         {console.log(info.unitatTics + '\n' + cicleSeleccionat)}
       </View>
       <Divider style={{ padding: 3 }} horizontalInset={true} bold={true} />
-      <LlistatProfesCicle cicleSeleccionat={cicleSeleccionat} dades={info} />
+      <LlistatProfesCicle cicleSeleccionat={cicleSeleccionat} dades={info} eliminarDades={eliminacioDades} />
     </View>
   );
 };

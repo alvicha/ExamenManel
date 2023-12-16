@@ -67,7 +67,7 @@ const InfoProfes = (props) => {
           <Dialog visible={visible} onDismiss={hideDialog}>
             <Dialog.Title>Eliminacio Professor</Dialog.Title>
             <Dialog.Content>
-              <Text variant="bodyMedium">Estàs segur que vols esborrar a aquest professor de la llista?</Text>
+              <Text variant="bodyMedium">Estàs segur que vols esborrar al professor {props.dades.nom} amb modul {props.dades.modul} de la llista?</Text>
             </Dialog.Content>
             <Dialog.Actions>
               <Button onPress={hideDialog}>No</Button>

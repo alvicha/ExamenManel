@@ -26,7 +26,7 @@ const LlistatProfesCicle = props => {
   }
 
   return (
-    <View style={{ flex: 2.5, padding: 3, borderColor: 'red' }}>
+    <View style={{ flex: 2.5, padding: 3 }}>
       {props.cicleSeleccionat !== null ? (
         props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes.map(
           (unModul, index) => {

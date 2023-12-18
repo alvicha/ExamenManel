@@ -25,7 +25,6 @@ const InfoProfes = (props) => {
   }
 
   return (
-    <ScrollView contentContainerStyle={styles.contentLlistatProfes}>
       <PaperProvider>
         <View style={styles.chip}>
           <Chip icon="human-male-board" onPress={donarChipActivat}>
@@ -76,15 +75,10 @@ const InfoProfes = (props) => {
           </Dialog>
         </Portal>
       </PaperProvider>
-    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  contentLlistatProfes: {
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-  },
   cardContent: {
     flex: 1,
     width: 350,

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, FlatList } from 'react-native';
 import { Switch } from 'react-native-paper';
 import InfoProfes from './infoProfes'
 
@@ -13,7 +13,7 @@ const LlistatProfesCicle = props => {
 
   const eliminarProfessorLlista = (index) => {
     props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes.splice(index, 1);
-    
+
     const professor = props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes[index];
     let nomProfessor = professor.nom;
     const indexProfesor = props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes.findIndex(
@@ -28,18 +28,19 @@ const LlistatProfesCicle = props => {
   return (
     <View style={{ flex: 2.5, padding: 3 }}>
       {props.cicleSeleccionat !== null ? (
-        props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes.map(
-          (unModul, index) => {
-            return (
-              <InfoProfes
-                key={index}
-                dades={unModul}
-                index={index}
-                eliminaProfessorLlista={eliminarProfessorLlista}
-              />
-            );
-          },
-        )
+        <FlatList
+          data={props.dades.unitatTics[props.cicleSeleccionat].curs[selectedCursIndex].profes}
+          keyExtractor={(item, index) => index.toString()}
+          contentContainerStyle={styles.contentLlistatProfes}
+          renderItem={({ item, index }) => (
+            <InfoProfes
+              key={index}
+              dades={item}
+              index={index}
+              eliminaProfessorLlista={eliminarProfessorLlista}
+            />
+          )}
+        />
       ) : (
         <Text style={{ fontSize: 18, fontWeight: '400' }}>
           Selecciona un cicle. Sempre es visualitzaran els profes de 1r curs
@@ -61,3 +62,11 @@ const LlistatProfesCicle = props => {
 };
 
 export default LlistatProfesCicle;
+
+
+const styles = StyleSheet.create({
+  contentLlistatProfes: {
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+  }
+})

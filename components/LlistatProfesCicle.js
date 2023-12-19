@@ -61,12 +61,11 @@ const LlistatProfesCicle = props => {
   );
 };
 
-export default LlistatProfesCicle;
-
-
 const styles = StyleSheet.create({
   contentLlistatProfes: {
     flexDirection: 'column',
     justifyContent: 'space-around',
   }
-})
+});
+
+export default LlistatProfesCicle;

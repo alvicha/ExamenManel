@@ -14,7 +14,7 @@ const InfoProfes = (props) => {
   const hideDialog = () => setVisible(false);
 
   const showModal = () => setModalVisible(true);
-  const hideModal = () => setModalVisible(false);
+
 
   const donarChipActivat = () => {
     setMostrarChipProfessor(!mostrarChipProfessor);
@@ -28,7 +28,7 @@ const InfoProfes = (props) => {
   return (
     <PaperProvider>
       {modalVisible ?
-        (<ModalInfoProfes dades={props.dades} />) :
+        (<ModalInfoProfes dades={props.dades} modal={modalVisible}/>) :
         (
           <View style={styles.chip}>
             <Chip icon="human-male-board" onPress={donarChipActivat}>

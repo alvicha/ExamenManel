@@ -4,7 +4,7 @@ import { Switch, TextInput, Portal, Modal } from 'react-native-paper';
 
 
 const ModalInfoProfes = props => {
-    const [modalVisible, setModalVisible] = React.useState(true);
+    const [modalVisible, setModalVisible] = React.useState(props.modalVisible);
     const hideModal = () => setModalVisible(false);
     const showModal = () => setModalVisible(true);
     const containerStyle = { backgroundColor: 'white', padding: 120 };

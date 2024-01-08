@@ -12,9 +12,7 @@ const InfoProfes = (props) => {
 
   const showDialog = () => setVisible(true);
   const hideDialog = () => setVisible(false);
-
   const showModal = () => setModalVisible(true);
-
 
   const donarChipActivat = () => {
     setMostrarChipProfessor(!mostrarChipProfessor);
@@ -28,36 +26,40 @@ const InfoProfes = (props) => {
   return (
     <PaperProvider>
       {modalVisible ?
-        (<ModalInfoProfes dades={props.dades} modal={modalVisible}/>) :
+        (<ModalInfoProfes dades={props.dades} modal={modalVisible} hideModal={() => setModalVisible(false)}
+        />) :
         (
           <View style={styles.chip}>
             <Chip icon="human-male-board" onPress={donarChipActivat}>
               {props.dades.nom}
             </Chip>
             {mostrarChipProfessor && (
-              <Card mode='outlined' style={{
+              <Card style={{
                 flexDirection: 'row',
                 justifyContent: 'flex-start',
                 alignItems: 'flex-end',
                 backgroundColor: arrayColores[colorFondoIndex],
               }}
-                onPress={showModal}>
-                <Card.Title titleStyle={styles.title}
-                  title={props.dades.nom} right={fotoProfessor} />
-                <Card.Content style={styles.cardContent}>
-                  <Text style={styles.modul} variant="bodyMedium">Modul:
-                    <Text style={styles.textModul}>{props.dades.modul}</Text>
-                  </Text>
-                  <Text style={styles.enunciatCompletModul} variant="bodyMedium">Nom complet modul:
-                    <Text style={styles.completModul}>{props.dades.nomCompletModul}</Text>
-                  </Text>
-                  <Text style={styles.enunciatHoresSetmanals} variant="bodyMedium">Hores setmanals:
-                    <Text style={styles.horesSetmanals}>{props.dades.horesSetmanals}</Text>
-                  </Text>
-                </Card.Content>
+              >
+                <TouchableRipple onPress={showModal}>
+                  <View>
+                    <Card.Title titleStyle={styles.title}
+                      title={props.dades.nom} right={fotoProfessor} />
+                    <Card.Content style={styles.cardContent}>
+                      <Text style={styles.modul} variant="bodyMedium">Modul:
+                        <Text style={styles.textModul}>{props.dades.modul}</Text>
+                      </Text>
+                      <Text style={styles.enunciatCompletModul} variant="bodyMedium">Nom complet modul:
+                        <Text style={styles.completModul}>{props.dades.nomCompletModul}</Text>
+                      </Text>
+                      <Text style={styles.enunciatHoresSetmanals} variant="bodyMedium">Hores setmanals:
+                        <Text style={styles.horesSetmanals}>{props.dades.horesSetmanals}</Text>
+                      </Text>
+                    </Card.Content>
+                  </View>
+                </TouchableRipple>
               </Card>
-            )
-            }
+            )}
           </View>
         )}
     </PaperProvider >
